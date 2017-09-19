@@ -23,7 +23,7 @@ let config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['env', 'react']
         }
       },
       {
@@ -32,7 +32,7 @@ let config = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css?modules'
+        loader: 'style-loader!css-loader'
       }
     ]
   },
