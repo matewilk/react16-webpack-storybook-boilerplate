@@ -5,11 +5,11 @@ export default function steps (state = {}, action) {
   switch (action.type) {
     case NEXT_STEP:
       newState = JSON.parse(JSON.stringify(state));
-      return newState + 1;
+      return newState < 4 ? newState + 1 : newState;
 
     case PREV_STEP:
       newState = JSON.parse(JSON.stringify(state));
-      return newState - 1;
+      return newState > 0 ? newState - 1 : newState;
 
     default:
       return state;
