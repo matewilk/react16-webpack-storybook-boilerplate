@@ -9,7 +9,7 @@ import { Row, Col } from 'react-flexbox-grid';
 // material-ui
 import Avatar from 'material-ui/Avatar';
 import { Card, CardText } from 'material-ui/Card';
-import Paper from 'material-ui/Paper';
+import { cyan500 } from 'material-ui/styles/colors';
 // material-ui icons
 import ActionDone from 'material-ui/svg-icons/action/done';
 import Image1 from 'material-ui/svg-icons/image/looks-one';
@@ -41,12 +41,14 @@ class NavigationButton extends React.Component {
   }
 
   render () {
+    let color = this.props.step - 1 === this.props.steps ? cyan500 : '';
     return (
       <Col xs={3}>
         <Row center='xs'>
           <Col xs={12}>
             <Link to={this.props.link} style={{textDecoration: 'none'}}>
               <Avatar
+                backgroundColor={color}
                 icon={this.renderIcon()}
               />
               <div>{this.props.text}</div>

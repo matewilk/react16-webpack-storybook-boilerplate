@@ -21,7 +21,6 @@ class Welcome extends React.Component {
   render () {
     return (
       <div>
-        <div>Choose a Toy</div>
         <ItemsList list='toys' />
         <BottomNavigation
           label="Continue"
@@ -36,7 +35,6 @@ class Select extends React.Component {
   render () {
     return (
       <div>
-        <div>Select Product</div>
         <ItemsList list='products' />
         <BottomNavigation
           label="Now choose a toy"
@@ -52,7 +50,6 @@ class Claim extends React.Component {
   render () {
     return (
       <div>
-        <div>Address</div>
         <AddressForm />
         <BottomNavigation
           label="Claim your toy"
@@ -68,7 +65,6 @@ class Congratulations extends React.Component {
   render () {
     return (
       <div>
-        <div>Congratulations</div>
         <BottomNavigation
           label="Complete Reward claim"
           prev="/claim"

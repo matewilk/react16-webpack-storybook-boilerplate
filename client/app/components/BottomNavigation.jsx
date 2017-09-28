@@ -36,7 +36,7 @@ class BottomNavigation extends React.Component {
 
   render () {
     return (
-      <Row between='xs'>
+      <Row between='xs' style={{marginTop: '20px'}}>
         <Col xs={6}>
           <RaisedButton
             fullWidth={true}

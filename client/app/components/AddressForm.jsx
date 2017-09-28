@@ -13,7 +13,11 @@ class AddressForm extends React.Component {
           fullWidth={true}
         />
         <TextField
-          hintText='Address'
+          hintText='Address Line 1'
+          fullWidth={true}
+        />
+        <TextField
+          hintText='Address Line 2'
           fullWidth={true}
         />
         <TextField
