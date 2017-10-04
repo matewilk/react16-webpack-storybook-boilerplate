@@ -24,6 +24,9 @@ const middleware = routerMiddleware(history);
 const createStoreWithMiddleware = applyMiddleware(middleware)(createStore);
 const store = createStoreWithMiddleware(reducers, initialState);
 
+// styles
+import '../public/styles/main';
+
 
 ReactDOM.render(
   <MuiThemeProvider>

@@ -14,6 +14,7 @@ import TopBar from './TopBar';
 import TopNavigation from './TopNavigation';
 import ItemsList from './ItemsList';
 import AddressForm from './AddressForm';
+import Carousel from './Carousel';
 import BottomNavigation from './BottomNavigation';
 
 
@@ -65,6 +66,7 @@ class Congratulations extends React.Component {
   render () {
     return (
       <div>
+        <Carousel/>
         <BottomNavigation
           label="Complete Reward claim"
           prev="/claim"
