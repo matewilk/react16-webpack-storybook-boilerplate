@@ -23,7 +23,7 @@ let config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['env', 'stage-2', 'react']
+          presets: ['env', 'stage-2', 'react', {'modules': false}]
         }
       },
       {
