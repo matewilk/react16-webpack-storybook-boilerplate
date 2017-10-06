@@ -14,6 +14,60 @@ import data from '../data/data.json';
 import Slide from './Slide';
 
 class Carousel extends React.Component {
+  constructor (props) {
+    super(props);
+
+    this.navigateBefore = this.navigateBefore.bind(this);
+
+    this.state = {
+      slideWidth: 0,
+      numOfSlidesToScroll: 1,
+      totalSlides: 7,
+      currentSlide: 0
+    }
+  }
+
+  onResize = () => {
+    console.log('resizing');
+    const { carouselViewport } = this.refs;
+    carouselViewport.scrollLeft = carouselViewport.offsetWidth * this.state.currentSlide;
+    this.setState({slideWidth: carouselViewport.offsetWidth});
+
+  };
+
+  componentDidMount () {
+    window.addEventListener('resize', this.onResize);
+
+    const { carouselViewport } = this.refs;
+    this.setState({slideWidth: carouselViewport.offsetWidth});
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  navigateBefore (e) {
+    console.log('nav before');
+    const { carouselViewport } = this.refs;
+    let numOfSlidesToScroll = this.state.numOfSlidesToScroll;
+    let slideWidth = this.state.slideWidth;
+    let newPos = carouselViewport.scrollLeft - (slideWidth * numOfSlidesToScroll);
+    carouselViewport.scrollLeft = newPos;
+
+    this.setState({currentSlide: this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0})
+  }
+
+  navigateNext = (e) => {
+    console.log('nav next');
+    const { carouselViewport } = this.refs;
+    let numOfSlidesToScroll = this.state.numOfSlidesToScroll;
+    let slideWidth = this.state.slideWidth;
+    let newPos = carouselViewport.scrollLeft + (slideWidth * numOfSlidesToScroll);
+    carouselViewport.scrollLeft = newPos;
+
+    this.setState({currentSlide: this.state.currentSlide < this.state.totalSlides ? this.state.currentSlide + 1 : this.state.totalSlides})
+  };
+
   renderSlides () {
     return data.map((item) => {
       return (
@@ -29,13 +83,13 @@ class Carousel extends React.Component {
   render () {
     return (
       <div className='carousel-container'>
-        <IconButton>
+        <IconButton onClick={this.navigateBefore}>
           <NavigateBefore/>
         </IconButton>
-        <div className='carousel-viewport'>
+        <div className='carousel-viewport' ref='carouselViewport'>
           {this.renderSlides()}
         </div>
-        <IconButton>
+        <IconButton onClick={this.navigateNext}>
           <NavigateNext/>
         </IconButton>
       </div>

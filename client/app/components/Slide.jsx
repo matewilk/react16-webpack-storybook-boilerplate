@@ -11,7 +11,7 @@ class Slide extends React.Component {
       value
     } = this.props;
     return (
-      <div style={{backgroundColor: value}}>{color}</div>
+      <div className='slide' style={{backgroundColor: value}}>{color}</div>
     )
   }
 }
