@@ -23,7 +23,7 @@ let config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['env', 'stage-2', 'react', {'modules': false}]
+          presets: ['env', 'stage-2', 'react']
         }
       },
       {
@@ -32,7 +32,11 @@ let config = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        exclude: ["node_modules/react-flexbox-grid"],
+        loaders: [
+          'style-loader',
+          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&sourceMap&-minimize'
+        ]
       },
       {
         test: /\.scss$/,

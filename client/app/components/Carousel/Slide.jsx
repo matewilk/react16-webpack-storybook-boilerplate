@@ -4,6 +4,9 @@ import React from 'react';
 // material-ui
 import IconButton from 'material-ui/IconButton';
 
+// styles
+import styles from './slide.css';
+
 class Slide extends React.Component {
   render () {
     const {
@@ -11,7 +14,7 @@ class Slide extends React.Component {
       value
     } = this.props;
     return (
-      <div className='slide' style={{backgroundColor: value}}>{color}</div>
+      <div className={ styles['slide'] } style={{backgroundColor: value}}>{color}</div>
     )
   }
 }

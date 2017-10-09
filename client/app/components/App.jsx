@@ -14,7 +14,7 @@ import TopBar from './TopBar';
 import TopNavigation from './TopNavigation';
 import ItemsList from './ItemsList';
 import AddressForm from './AddressForm';
-import Carousel from './Carousel';
+import Carousel from './Carousel/Carousel';
 import BottomNavigation from './BottomNavigation';
 
 

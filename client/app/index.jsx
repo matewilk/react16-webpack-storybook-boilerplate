@@ -27,7 +27,6 @@ const store = createStoreWithMiddleware(reducers, initialState);
 // styles
 import '../public/styles/main';
 
-
 ReactDOM.render(
   <MuiThemeProvider>
     <Provider store={store}>

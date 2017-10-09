@@ -8,10 +8,13 @@ import NavigateBefore from 'material-ui/svg-icons/image/navigate-before';
 import NavigateNext from 'material-ui/svg-icons/image/navigate-next';
 
 // fake data
-import data from '../data/data.json';
+import data from '../../data/data.json';
 
 // components
 import Slide from './Slide';
+
+// styles
+import styles from './carousel.css';
 
 class Carousel extends React.Component {
   constructor (props) {
@@ -82,11 +85,11 @@ class Carousel extends React.Component {
 
   render () {
     return (
-      <div className='carousel-container'>
+      <div className={ styles['carousel-container'] }>
         <IconButton onClick={this.navigateBefore}>
           <NavigateBefore/>
         </IconButton>
-        <div className='carousel-viewport' ref='carouselViewport'>
+        <div className={ styles['carousel-viewport'] } ref='carouselViewport'>
           {this.renderSlides()}
         </div>
         <IconButton onClick={this.navigateNext}>
