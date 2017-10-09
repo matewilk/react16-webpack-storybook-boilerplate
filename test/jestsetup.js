@@ -7,10 +7,7 @@ Enzyme.configure({ adapter: new Adapter() });
 global.shallow = shallow;
 global.render = render;
 global.mount = mount;
-// the function below gets rid of react-polyfills warning while running tests
-global.requestAnimationFrame = function (cb) {
-  return setTimeout(cb, 0);
-};
+
 // Fail tests on any warning
 console.error = message => {
   throw new Error(message);
