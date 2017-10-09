@@ -10,3 +10,7 @@
   display: flex;
   flex: 1;
 }
+
+/*.carousel-viewport::-webkit-scrollbar {*/
+  /*display: none;*/
+/*}*/
