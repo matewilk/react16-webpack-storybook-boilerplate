@@ -7,6 +7,9 @@ import IconButton from 'material-ui/IconButton';
 import NavigateBefore from 'material-ui/svg-icons/image/navigate-before';
 import NavigateNext from 'material-ui/svg-icons/image/navigate-next';
 
+// animation
+import { TweenLite } from 'gsap';
+
 // fake data
 import data from '../../data/data.json';
 
@@ -40,9 +43,7 @@ class Carousel extends React.Component {
 
   componentDidMount () {
     window.addEventListener('resize', this.onResize);
-
-    const { carouselViewport } = this.refs;
-    this.setState({slideWidth: carouselViewport.offsetWidth});
+    this.onResize();
   }
 
   componentWillUnmount () {
@@ -55,7 +56,8 @@ class Carousel extends React.Component {
     let numOfSlidesToScroll = this.state.numOfSlidesToScroll;
     let slideWidth = this.state.slideWidth;
     let newPos = carouselViewport.scrollLeft - (slideWidth * numOfSlidesToScroll);
-    carouselViewport.scrollLeft = newPos;
+    // carouselViewport.scrollLeft = newPos;
+    TweenLite.to(carouselViewport, 1, {scrollLeft: newPos});
 
     this.setState({currentSlide: this.state.currentSlide > 0 ? this.state.currentSlide - 1 : 0})
   }
@@ -66,7 +68,8 @@ class Carousel extends React.Component {
     let numOfSlidesToScroll = this.state.numOfSlidesToScroll;
     let slideWidth = this.state.slideWidth;
     let newPos = carouselViewport.scrollLeft + (slideWidth * numOfSlidesToScroll);
-    carouselViewport.scrollLeft = newPos;
+    // carouselViewport.scrollLeft = newPos;
+    TweenLite.to(carouselViewport, 1, {scrollLeft: newPos});
 
     this.setState({currentSlide: this.state.currentSlide < this.state.totalSlides ? this.state.currentSlide + 1 : this.state.totalSlides})
   };

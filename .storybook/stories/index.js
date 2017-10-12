@@ -8,6 +8,7 @@ import { Button, Welcome } from '@storybook/react/demo';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TopBar from '../../client/app/components/TopBar';
+import Carousel from '../../client/app/components/Carousel/Carousel';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -17,3 +18,6 @@ storiesOf('Button', module)
 
 storiesOf('TopBar', module)
   .add('standard', () => <MuiThemeProvider><TopBar/></MuiThemeProvider>);
+
+storiesOf('Carousel', module)
+  .add('standard', () => <MuiThemeProvider><Carousel/></MuiThemeProvider>);
