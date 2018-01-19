@@ -1,10 +1,9 @@
-export const ACTION_ONE = 'ACTION_ONE';
-export const ACTION_TWO = 'ACTION_TWO';
+import C from '../constants';
 
 export function actionOne () {
-  return { type: ACTION_ONE }
+  return { type: C.ACTION_ONE }
 }
 
 export function actionTwo () {
-  return { type: ACTION_TWO }
+  return { type: C.ACTION_TWO }
 }

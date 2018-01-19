@@ -10,7 +10,7 @@ import createHistory from 'history/createBrowserHistory'
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux'
 
 import App from './components/App';
-import { reducers } from './reducers/index';
+import { reducers } from './store/index';
 
 // initial state
 const initialState = { };
