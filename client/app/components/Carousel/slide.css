@@ -1,9 +1,0 @@
-.slide {
-  composes: myClass from './test.css';
-  flex: 1 0 100%;
-  white-space: normal;
-}
-
-.slide:last-child {
-  border-right: none;
-}

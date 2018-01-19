@@ -13,7 +13,7 @@ import App from './components/App';
 import { reducers } from './reducers/index';
 
 // initial state
-const initialState = { steps: 0 };
+const initialState = { };
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory();

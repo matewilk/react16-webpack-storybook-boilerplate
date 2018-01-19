@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux'
 
-import steps from './steps';
+import reducer from './reducers';
 
 export const reducers = combineReducers({
-  steps,
+  reducer,
   router: routerReducer
 });
