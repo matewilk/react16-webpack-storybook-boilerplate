@@ -1,6 +1,6 @@
 import C from '../constants';
 
-export default function reducer (state = {}, action) {
+export const reducer  = (state = {}, action) => {
   switch (action.type) {
     case C.ACTION_ONE:
       return {...state};
