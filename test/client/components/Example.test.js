@@ -1,6 +1,25 @@
 import React from 'react';
 import Example from '../../../client/app/components/Example';
 
+// import { Provider } from 'react-redux';
+// let wrapper;
+// const _store = {
+// 	dispatch: jest.fn(),
+// 	subscribe: jest.fn(),
+// 	getState: jest.fn(() =>
+// 		({
+// 			propOne: 'prop val',
+// 			someFn: () => {}
+// 		}))
+// };
+//
+// beforeAll(() => wrapper = global.mount(
+// 	<Provider store={_store}>
+// 		<Example />
+// 	</Provider>
+// ));
+// expect(wrapper.find()).toBe('');
+
 describe('<Example /> UI Component', () => {
 	it('renders component ', () =>
 		expect(
