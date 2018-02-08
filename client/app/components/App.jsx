@@ -1,8 +1,11 @@
 import React from 'react'
+import Button from 'material-ui/Button'
 
 const App = () =>
   <div>
-    <h1>Hello from App</h1>
+    <Button variant="raised" color="primary">
+      Hello World
+    </Button>
   </div>;
 
 export default App;

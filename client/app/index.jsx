@@ -3,7 +3,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+
+// material-ui & mui theme
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import theme from './theme/mui-theme';
+
 
 // react redux routing
 import createHistory from 'history/createBrowserHistory'
@@ -28,7 +32,7 @@ const store = createStoreWithMiddleware(reducers, initialState);
 import '../public/styles/main';
 
 ReactDOM.render(
-  <MuiThemeProvider>
+  <MuiThemeProvider theme={theme}>
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <App />
