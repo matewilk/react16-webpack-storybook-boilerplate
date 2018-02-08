@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 
 // material-ui & mui theme
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Reboot from 'material-ui/Reboot';
 import theme from './theme/mui-theme';
 
 
@@ -32,12 +33,14 @@ const store = createStoreWithMiddleware(reducers, initialState);
 import '../public/styles/main';
 
 ReactDOM.render(
-  <MuiThemeProvider theme={theme}>
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <App />
-      </ConnectedRouter>
-    </Provider>
-  </MuiThemeProvider>,
+  <Reboot>
+    <MuiThemeProvider theme={theme}>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <App />
+        </ConnectedRouter>
+      </Provider>
+    </MuiThemeProvider>
+  </Reboot>,
   document.getElementById('app')
 );
